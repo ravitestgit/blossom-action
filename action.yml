@@ -1,0 +1,12 @@
+name: 'Blossom Action'
+description: 'Run blossom ci related task '
+inputs:
+  task:  # id of input
+    description: 'task to perform'
+    default: 'scan'
+branding:
+  icon: 'activity'  
+  color: 'green'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
