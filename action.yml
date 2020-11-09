@@ -8,5 +8,9 @@ branding:
   icon: 'activity'  
   color: 'green'
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "composite"
+  steps: 
+    - run: chmod +x ${{ github.action_path }}/script.sh
+      shell: bash
+    - run: ${{ github.action_path }}/script.sh
+      shell: bash
