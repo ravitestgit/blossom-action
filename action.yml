@@ -10,8 +10,6 @@ branding:
 runs:
   using: "composite"
   steps: 
-    - run: echo Hello ${{ inputs.task-args }}.
-      shell: bash
     - run: chmod +x ${{ github.action_path }}/script.sh
       shell: bash
     - run: ${{ github.action_path }}/script.sh ${{ inputs.task-args }}
