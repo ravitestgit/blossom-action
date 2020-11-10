@@ -10,6 +10,11 @@ branding:
 runs:
   using: "composite"
   steps: 
+    - name: Add mask
+      run: |
+         MY_TOKEN=$(cat $GITHUB_EVENT_PATH | jq '.inputs.token' | sed 's/"//g' )
+         echo "::add-mask::$MY_TOKEN"
+      shell: bash
     - run: chmod +x ${{ github.action_path }}/script.sh
       shell: bash
     - run: ${{ github.action_path }}/script.sh ${{ inputs.args }}
