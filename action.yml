@@ -17,5 +17,5 @@ runs:
       shell: bash
     - run: chmod +x ${{ github.action_path }}/script.sh
       shell: bash
-    - run: ${{ github.action_path }}/script.sh $(cat $GITHUB_EVENT_PATH )
+    - run: ${{ github.action_path }}/script.sh
       shell: bash
