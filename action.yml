@@ -4,6 +4,7 @@ inputs:
   args:
     description: 'task argument'
     default: '{}'
+    required: false
 branding:
   icon: 'activity'  
   color: 'green'
