@@ -10,9 +10,6 @@ branding:
   color: 'green'
 runs:
   using: "composite"
-  pre:
-    - name: hello
-      run: echo "helo123"
   steps: 
     - name: Add mask
       run: |
