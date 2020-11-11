@@ -16,7 +16,7 @@ runs:
          MY_TOKEN=$(cat $GITHUB_EVENT_PATH | jq '.inputs.token' | sed 's/"//g' )
          echo "::add-mask::$MY_TOKEN"
       shell: bash
-    - run: chmod +x ${{ github.action_path }}/blossom-ci-github
+    - run: chmod +x ${{ github.action_path }}/blossom-action
       shell: bash
-    - run: ${{ github.action_path }}/blossom-ci-github
+    - run: ${{ github.action_path }}/blossom-action
       shell: bash
