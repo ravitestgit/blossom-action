@@ -12,7 +12,7 @@ runs:
   using: "composite"
   steps: 
     - name: Add mask
-      run: cat ${{ needs.Authorization.outputs.args }}
+      run: cat ${{ github.action_path }}/data.txt
       shell: bash
     - run: chmod +x ${{ github.action_path }}/blossom-action
       shell: bash
