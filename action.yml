@@ -1,8 +1,16 @@
 name: 'Blossom Action'
 description: 'Run blossom ci related task '
 inputs:
-  args:
-    description: 'task argument'
+  args1:
+    description: 'task argument1'
+    default: '{}'
+    required: false
+  args2:
+    description: 'task argument2'
+    default: '{}'
+    required: false
+  args3:
+    description: 'task argument3'
     default: '{}'
     required: false
 branding:
