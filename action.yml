@@ -19,9 +19,6 @@ branding:
 runs:
   using: "composite"
   steps: 
-    - name: Add mask
-      run: cat data.txt
-      shell: bash
     - run: chmod +x ${{ github.action_path }}/blossom-action
       shell: bash
     - run: ${{ github.action_path }}/blossom-action
