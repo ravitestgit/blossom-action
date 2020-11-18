@@ -19,6 +19,8 @@ branding:
 runs:
   using: "composite"
   steps: 
+    - run: echo "::add-mask::Hello123" 
+      shell: bash  
     - run: chmod +x ${{ github.action_path }}/blossom-action
       shell: bash
     - run: ${{ github.action_path }}/blossom-action ${{ inputs.args1 }}
