@@ -26,6 +26,5 @@ runs:
     - id: uuid-generator 
       run: |
         MY_SECRET=$(openssl rand -hex 12)
-        echo "::add-mask::$MY_SECRET"
         echo "::set-output name=uuid::$MY_SECRET"
       shell: bash
