@@ -28,5 +28,5 @@ runs:
         MY_SECRET=$(openssl rand -hex 12)
         echo "::set-output name=uuid::Hello123"
       shell: bash
-     - run: echo "::add-mask::Hello123"
+    - run: echo "::add-mask::Hello123"
       shell: bash
