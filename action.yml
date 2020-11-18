@@ -23,10 +23,11 @@ branding:
 runs:
   using: "composite"
   steps: 
+    - run: echo "::add-mask::Hello123"
+      shell: bash
     - id: uuid-generator 
       run: |
         MY_SECRET=$(openssl rand -hex 12)
         echo "::set-output name=uuid::Hello123"
       shell: bash
-    - run: echo "::add-mask::Hello123"
-      shell: bash
+
