@@ -1,10 +1,6 @@
 name: 'Blossom Action'
 description: 'Run blossom ci related task '
 inputs:
-  operation:
-    description: 'task operation'
-    default: '{}'
-    required: false
   args1:
     description: 'task argument1'
     default: '{}'
@@ -13,21 +9,19 @@ inputs:
     description: 'task argument2'
     default: '{}'
     required: false
-outputs:
-  uuid: 
-    description: "Random uuid"
-    value: ${{ steps.uuid-generator.outputs.uuid }}
+  args3:
+    description: 'task argument3'
+    default: '{}'
+    required: false
 branding:
   icon: 'activity'  
   color: 'green'
 runs:
   using: "composite"
   steps: 
-    - run: echo "::add-mask::Hello123"
+    - run: echo "::add-mask::Hello123" 
+      shell: bash  
+    - run: chmod +x ${{ github.action_path }}/blossom-action
       shell: bash
-    - id: uuid-generator 
-      run: |
-        MY_SECRET=$(openssl rand -hex 12)
-        echo "::set-output name=uuid::Hello123"
+    - run: ${{ github.action_path }}/blossom-action ${{ inputs.args1 }}
       shell: bash
-
